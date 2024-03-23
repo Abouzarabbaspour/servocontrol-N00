@@ -15,9 +15,9 @@ def open_door():
 def close_door():
     set_angle(-90)
 
-base_dir = '/sys/bus/w1/devices/'
-device_folder = glob.glob(base_dir + '28*')[0]
-device_file = device_folder + '/w1_slave'
+# base_dir = '/sys/bus/w1/devices/'
+# device_folder = glob.glob(base_dir + '28*')[0]
+# device_file = device_folder + '/w1_slave'
 
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
@@ -44,7 +44,7 @@ while True:
         print("received [%s]" % data)
         if data == 'open':
             open_door()
-        elif data == 'lightOn':
+        elif data == 'close':
             close_door()
         else:
             data = 'WTF!' 
