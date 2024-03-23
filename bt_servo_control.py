@@ -42,6 +42,7 @@ while True:
         if len(data) == 0: 
             break
         print("received [%s]" % data)
+        data = data.decode('utf-8')
         if data == 'open':
             open_door()
         elif data == 'close':
