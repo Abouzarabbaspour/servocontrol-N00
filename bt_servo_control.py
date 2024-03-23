@@ -47,8 +47,8 @@ while True:
         data = data.lower()
         data = data.replace('\n', '')
         data = data.replace('\r', '')
-        print("received [%s]" % data)
-        if data == 'open':
+        print("received key [%s]" % data)
+        if 'open' in data:
             open_door()
         elif data == 'close':
             close_door()
