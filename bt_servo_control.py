@@ -41,8 +41,13 @@ while True:
         data = client_sock.recv(1024)
         if len(data) == 0: 
             break
-        print("received [%s]" % data)
+
         data = data.decode('utf-8')
+        data = data.strip()
+        data = data.lower()
+        data = data.replace('\n', '')
+        data = data.replace('\r', '')
+        print("received [%s]" % data)
         if data == 'open':
             open_door()
         elif data == 'close':
