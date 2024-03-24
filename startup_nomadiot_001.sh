@@ -13,7 +13,7 @@ bluetoothctl power on & sleep 1
 echo "Setting device to discoverable..."
 bluetoothctl discoverable on & sleep 1
 # Navigate to the specified directory
-cd /home/servocontrol-N00
+cd /root/servocontrol-N00
 
 # Pull the latest changes from Git repository
 git pull
