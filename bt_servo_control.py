@@ -4,20 +4,22 @@ import time
 import RPi.GPIO as GPIO
 from bluetooth import *
 from gpiozero import AngularServo
+import config as cfg
 
 servo = AngularServo(18, min_angle=-90, max_angle=90)
 def set_angle(angle):
     servo.angle = angle
-
 def open_door():
-    set_angle(90)
-
+    # read open angle from config file
+    open_angle = cfg.angle_values['open']
+    set_angle(open_angle)
 def close_door():
-    set_angle(-90)
+    # read close angle from config file
+    close_angle = cfg.angle_values['close']
+    set_angle(close_angle)
 
-# base_dir = '/sys/bus/w1/devices/'
-# device_folder = glob.glob(base_dir + '28*')[0]
-# device_file = device_folder + '/w1_slave'
+
+close_door()
 
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
@@ -48,7 +50,7 @@ while True:
         data = data.replace('\n', '')
         data = data.replace('\r', '')
         print("received key [%s]" % data)
-        if 'open' in data:
+        if data== 'open':
             open_door()
         elif data == 'close':
             close_door()
@@ -56,6 +58,7 @@ while True:
             data = 'WTF!' 
             client_sock.send(data)
         print("sending [%s]" % data)
+
     except IOError:
         pass
     except KeyboardInterrupt:
