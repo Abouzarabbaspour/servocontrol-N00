@@ -2,7 +2,8 @@
 
 ##### startup script
 
-cp startup_nomadiot_001.sh /etc/init.d/startup_nomadiot_001.sh
+crontab -e
+@reboot /root/servocontrol-N00/startup_nomadiot_001.sh
 chmod +x /etc/init.d/startup_nomadiot_001.sh
 
 
