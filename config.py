@@ -2,5 +2,5 @@
 
 angle_values = {
     'open': 0,
-    'close': -120
+    'close': -90
 }
