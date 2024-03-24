@@ -32,7 +32,8 @@ changing
 ExecStart=/usr/lib/bluetooth/bluetoothd
 into
 ExecStart=/usr/lib/bluetooth/bluetoothd -C
-Then adding the Serial Port Profile, executing: sudo sdptool add SP
+Then adding the Serial Port Profile, executing: 
+sudo sdptool add SP
 after that run
 systemctl daemon-reload 
 service bluetooth restart
