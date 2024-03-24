@@ -23,8 +23,8 @@ def open_close_door():
     time.sleep(1)
     close_door()
 
-
-close_door()
+#start sequence
+open_close_door()
 
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
