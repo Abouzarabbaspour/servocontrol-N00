@@ -55,14 +55,14 @@ while True:
         data = data.replace('\n', '')
         data = data.replace('\r', '')
         print("received key [%s]" % data)
-        if data== 'open':
+        if data== 'nomad_open':
             open_close_door()
-        elif data == 'open_switch':
+        elif data == 'nomad_open_switch':
             open_door()
-        elif data == 'close_switch':
+        elif data == 'nomad_close_switch':
             close_door()
         else:
-            data = 'WTF!' 
+            data = 'WTF! unknown command: ' + data + '\n'
             client_sock.send(data)
         print("sending [%s]" % data)
 
