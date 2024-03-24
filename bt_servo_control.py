@@ -56,8 +56,10 @@ while True:
         data = data.replace('\r', '')
         print("received key [%s]" % data)
         if data== 'open':
+            open_close_door()
+        elif data == 'open_switch':
             open_door()
-        elif data == 'close':
+        elif data == 'close_switch':
             close_door()
         else:
             data = 'WTF!' 
