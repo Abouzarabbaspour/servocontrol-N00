@@ -6,7 +6,7 @@ from bluetooth import *
 from gpiozero import AngularServo
 import config as cfg
 
-servo = AngularServo(18, min_angle=-90, max_angle=90)
+servo = AngularServo(18, min_angle=-120, max_angle=90)
 def set_angle(angle):
     servo.angle = angle
 def open_door():
