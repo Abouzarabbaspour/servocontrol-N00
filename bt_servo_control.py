@@ -20,7 +20,7 @@ def close_door():
 
 def open_close_door():
     open_door()
-    time.sleep(2)
+    time.sleep(1)
     close_door()
 
 
