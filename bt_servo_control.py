@@ -18,6 +18,11 @@ def close_door():
     close_angle = cfg.angle_values['close']
     set_angle(close_angle)
 
+def open_close_door():
+    open_door()
+    time.sleep(2)
+    close_door()
+
 
 close_door()
 
