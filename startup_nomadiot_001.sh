@@ -2,6 +2,10 @@
 # Change directory to the location of the script
 cd "$(dirname "$0")"
 
+for device in $(bluetoothctl devices  | grep -o "[[:xdigit:]:]\{8,17\}"); do
+    echo "removing bluetooth device: $device | $(bluetoothctl remove $device)"
+done
+
 systemctl daemon-reload 
 service bluetooth restart
 # Start the Bluetooth agent and configure Bluetooth settings
