@@ -2,7 +2,7 @@ import json
 
 angle_values = {
     'open': 0,
-    'close': -90
+    'close': -180
 }
 # read values from json file
 with open('values.json') as f:

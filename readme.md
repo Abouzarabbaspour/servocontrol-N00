@@ -9,7 +9,7 @@ chmod +x /etc/init.d/startup_nomadiot_001.sh
 
 
 
-####
+#### installing requirements
 cd ~
 git clone https://github.com/abouzarabbaspour/servocontrol-N00.git
 
