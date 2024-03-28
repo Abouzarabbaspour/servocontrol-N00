@@ -1,7 +1,7 @@
 import json
 
 angle_values = {
-    'open': 0,
+    'open': 180,
     'close': -180
 }
 # read values from json file
